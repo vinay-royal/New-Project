@@ -97,8 +97,8 @@
 
 	    <repository>
 	      <id>nexus</id>
-	      <name>vinay royal</name>
-	      <url>http://65.2.144.246:1999/vinay/repository/Project-1-release/</url>
+	      <name>vinay royal </name>
+	      <url>http://65.2.144.246:1999/vinay/repository/project-1-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
