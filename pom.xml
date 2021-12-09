@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>vinay royal </name>
-	      <url>ttp://65.2.144.246:1999/vinay/repository/Project-1-snapshot/</url>
+	      <url>http://65.2.144.246:1999/vinay/repository/Project-1-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
