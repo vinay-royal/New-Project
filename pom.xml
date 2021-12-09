@@ -94,17 +94,17 @@
 	</dependencies>
 	
 	<distributionManagement>
-	
+
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>vinay royal</name>
+	      <url>http://65.2.144.246:1999/vinay/repository/Project-1-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>vinay royal </name>
+	      <url>ttp://65.2.144.246:1999/vinay/repository/Project-1-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
