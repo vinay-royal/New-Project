@@ -1,0 +1,34 @@
+node
+{
+def mavenHome = tool name: "maven 3.8.4"
+  
+stage('pulling from github')
+{
+git branch: 'main', url: 'https://github.com/vinay-royal/New-Project.git'
+}
+
+stage('Build')
+{
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+stage('sonarqube')
+{
+sh "${mavenHome}/bin/mvn clean sonar:sonar"
+}
+
+stage('nexus')
+{
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+
+stage('tomcat deploy')
+{
+sshagent(['cd5f5503-72a9-42c3-93fe-1a320bf491ff']) 
+{
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.56.31:/opt/apache-tomcat-9.0.56/webapps"
+}
+}
+
+
+}
