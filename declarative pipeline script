@@ -1,0 +1,59 @@
+
+pipeline
+{
+agent any
+
+tools
+{
+maven "maven 3.8.4"
+}
+
+stages
+{
+stage('pulling from git')
+{
+steps
+{
+git branch: 'main', url: 'https://github.com/vinay-royal/New-Project.git'
+}
+}
+
+stage('build')
+{
+steps
+{
+sh "mvn clean package"
+}
+}
+
+
+stage('sonarqube')
+{
+steps
+{
+sh "mvn  clean sonar:sonar"
+}
+}
+
+stage('nexus')
+{
+steps
+{
+sh "mvn clean deploy"
+}
+}
+
+stage('tomcat')
+{
+steps
+{
+sshagent(['cd5f5503-72a9-42c3-93fe-1a320bf491ff'])
+{
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.206.19:/opt/apache-tomcat-9.0.56/webapps"
+}
+}
+}
+
+
+}
+}
