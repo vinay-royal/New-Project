@@ -1,7 +1,0 @@
-sudo su
-cd /
-yum install httpd -y
-systemctl start httpd
-systemctl enable httpd
-cd /var/www/html/
-nano index.hmtl
